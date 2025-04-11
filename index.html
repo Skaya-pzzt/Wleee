@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>HYD</title>
+  
+  <!-- Tambahkan font dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url(capy.jpg) no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Luckiest Guy', cursive;
+      color: #4b2e2e;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 80px auto;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .page {
+      display: none;
+      animation: fade 0.8s;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    img {
+      max-width: 200px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .btn-group {
+      margin-top: 30px;
+    }
+
+    .btn {
+      background-color: #c39b77;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 0 10px;
+      font-family: 'Luckiest Guy', cursive;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Halaman 1 -->
+    <div class="page active" id="page1">
+      <h1>HAPPY YASIN DAY!!</h1>
+      <p>Aduhaii manusia satu ini</p>
+      <img src="sin.png">
+      <h1>SOSOK MANUSIA YANG DOYAN NYABU</h1>
+    </div>
+
+    <!-- Halaman 2 -->
+    <div class="page" id="page2">
+      <h1>JANGAN LUPA MANDI YAAA</h1>
+      <p>SUKSES SELALU, SEMANGAT TERUS BERKOBAR 🌟</p>
+      <img src="em.jpg">
+      <p>semangat SNBT wlee</p>
+    </div>
+
+    <!-- Halaman 3 -->
+    <div class="page" id="page3">
+      <h1>TAR DULU WOII</h1>
+      <p>mau tau?</p>
+      <img src="mu.jpg">
+    </div>
+
+    <!-- Halaman 4 -->
+    <div class="page" id="page4">
+      <h1>jadi gini</h1>
+      <p>hehe</p>
+      <img src="ci.jpg">
+    </div>
+
+    <!-- Halaman 5 -->
+    <audio id="audio1">
+  <source src="stwy.mp3">
+</audio>
+
+    <div class="page" id="page5">
+      <h1>UDAH TAU KANNNN?!</h1>
+      <p>-TAMAT-</p>
+      <img src="ro.png">
+        <h1>DONGO</h1>
+    </div>
+
+    <!-- Tombol Navigasi -->
+    <div class="btn-group">
+   
+      <button class="btn" onclick="nextPage()">😏wle</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 5;
+
+    function showPage(n) {
+      for (let i = 1; i <= totalPages; i++) {
+        document.getElementById(`page${i}`).classList.remove('active');
+      }
+      document.getElementById(`page${n}`).classList.add('active');
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+      }
+    }
+  </script>
+
+</body>
+</html>
